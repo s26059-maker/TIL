@@ -1,0 +1,5 @@
+a, b = input().split()
+a = float(a)
+b = float(b)
+sale = (a * (b / 100))
+print(sale)

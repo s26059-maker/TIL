@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>절대 누르지 마</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:black;
+    color:white;
+    font-family:sans-serif;
+    overflow:hidden;
+}
+
+button{
+    padding:20px 40px;
+    font-size:25px;
+    border:none;
+    border-radius:10px;
+    background:red;
+    color:white;
+    cursor:pointer;
+}
+
+.glitch{
+    position:absolute;
+    font-size:40px;
+    animation:spin 2s linear infinite;
+}
+
+@keyframes spin{
+    0%{transform:rotate(0deg) scale(1)}
+    50%{transform:rotate(180deg) scale(2)}
+    100%{transform:rotate(360deg) scale(1)}
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="explode()">절대 누르지 마</button>
+
+<script>
+
+function explode(){
+
+    document.body.style.background =
+    "linear-gradient(90deg,red,orange,yellow,green,blue,purple)";
+
+    setInterval(()=>{
+        let t = document.createElement("div");
+        t.innerText="ㅋㅋㅋㅋ";
+        t.className="glitch";
+
+        t.style.left=Math.random()*100+"vw";
+        t.style.top=Math.random()*100+"vh";
+
+        document.body.appendChild(t);
+    },100);
+
+    setInterval(()=>{
+        document.body.style.transform=
+        "rotate("+(Math.random()*10-5)+"deg)";
+    },200);
+
+    alert("말했잖아 누르지 말라고 😈");
+
+}
+
+</script>
+
+</body>
+</html>
